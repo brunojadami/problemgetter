@@ -12,12 +12,6 @@ public class ToolKit {
 	}
 
 	public static HashMap<Integer, Problem> getProblems(boolean force) throws Exception{
-	
-		System.out.print("0%");
-		for (int i = 0; i < 50; ++i)
-			System.out.print("-");
-		System.out.println("100%");
-		System.out.print("  ");
 		
 		if (!force)
 		{
@@ -25,6 +19,13 @@ public class ToolKit {
 			if (problems != null)
 				return problems;
 		}
+		
+		System.out.println("\nGetting problems, this may take several minutes...");
+		System.out.print("0%");
+		for (int i = 0; i < 50; ++i)
+			System.out.print("-");
+		System.out.println("100%");
+		System.out.print("  ");
 	
 		String buff = Getter.getData("http://uvatoolkit.com/problemssolve.php");
 		problems = new HashMap<Integer, Problem>();

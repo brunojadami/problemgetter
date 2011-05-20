@@ -23,13 +23,11 @@ public class Core
 			String opt = scanner.next();
 			if (opt.equals("0"))
 			{
-				System.out.println("\nGetting problems, this may take several minutes...");
 				ToolKit.getProblems(true);
 				System.out.println("Problems cache created!");
 			}
 			else if (opt.equals("1"))
 			{
-				System.out.println("\nChoosing problems...");
 				HashSet<Integer> solved = Status.getSolved();
 				HashMap<Integer, Problem> problems = ToolKit.getProblems(false);
 				Maker.makeProblems(problems, solved, true);
